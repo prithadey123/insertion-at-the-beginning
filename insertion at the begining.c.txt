@@ -1,0 +1,46 @@
+  #include <stdio.h>
+      #include <stdlib.h>
+
+// Define structure
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to insert at beginning
+struct Node* insertAtBeginning(struct Node* head, int newData) {
+    // Create new node
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+
+    // Assign data
+    newNode->data = newData;
+
+    // Point new node to current head
+    newNode->next = head;
+
+    // Return new node as new head
+    return newNode;
+}
+
+// Function to display linked list
+void traverse(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+}
+
+int main() {
+    struct Node* head = NULL;
+
+    // Insert elements
+    head = insertAtBeginning(head, 30);
+    head = insertAtBeginning(head, 20);
+    head = insertAtBeginning(head, 10);
+
+    printf("Linked List after insertion at beginning:\n");
+    traverse(head);
+
+    return 0;
+}
