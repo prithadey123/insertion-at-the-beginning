@@ -10,7 +10,7 @@ When inserting at the beginning:
 2. The new node points to the current head.
 3. The new node becomes the new head of the list.
 
----
+--
 
  Source Code
 
